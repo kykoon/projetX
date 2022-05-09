@@ -29,6 +29,7 @@
                 <td>Nom</td>
                 <td>Prenom</td>
                 <td>Date de Naissance</td>
+                <td>Categorie</td>
                 <td colspan="2">Action</td>
             </tr>
         </thead>
@@ -40,6 +41,8 @@
                 <td>{{ $client->Nom }}</td>
                 <td>{{ $client->Prenom }}</td>
                 <td>{{ $client->DateNaissance }}</td>
+                <td>{{ $client->Categorie_id }}</td>
+
                 <td><a href="{{ route('clients.edit', $client->id)}}" class="btn btn-primary">Modifier</a></td>
                 <td>
                     <form action="{{ route('clients.destroy', $client->id)}}" method="post">
