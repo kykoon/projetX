@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Client;
+use App\Models\{Client, Categorie};
 use Illuminate\Http\Request;
+
+use function GuzzleHttp\Promise\all;
 
 class ClientController extends Controller
 {
@@ -15,8 +17,9 @@ class ClientController extends Controller
     public function index()
     {
         $clients = Client::all();
+        $categorie = Categorie::where('id', $clients->category_id)->get();
 
-        return view('index', compact('clients'));
+        return view('index', compact('clients', 'categorie'));
     }
 
     /**

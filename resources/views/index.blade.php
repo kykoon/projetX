@@ -41,7 +41,8 @@
                 <td>{{ $client->Nom }}</td>
                 <td>{{ $client->Prenom }}</td>
                 <td>{{ $client->DateNaissance }}</td>
-                <td>{{ $client->Categorie_id }}</td>
+
+                <td>{{ $client->Categorie_id->Libelle }}</td>
 
                 <td><a href="{{ route('clients.edit', $client->id)}}" class="btn btn-primary">Modifier</a></td>
                 <td>
