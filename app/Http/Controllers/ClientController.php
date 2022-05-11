@@ -16,10 +16,10 @@ class ClientController extends Controller
      */
     public function index()
     {
-        $clients = Client::all();
-        $categorie = Categorie::where('id', $clients->category_id)->get();
+        $categorie = Categorie::find(1);
+        $Clients = $categorie->clients;
 
-        return view('index', compact('clients', 'categorie'));
+        return view('index', compact('clients'));
     }
 
     /**
