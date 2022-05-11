@@ -42,8 +42,10 @@
                 <td>{{ $client->Prenom }}</td>
                 <td>{{ $client->DateNaissance }}</td>
 
-                <td>{{ $client->Categorie_id->Libelle }}</td>
-
+            @foreach($categories as $categorie)
+                <td>{{ $categorie->Libelle }}</td>
+            @endforeach
+            
                 <td><a href="{{ route('clients.edit', $client->id)}}" class="btn btn-primary">Modifier</a></td>
                 <td>
                     <form action="{{ route('clients.destroy', $client->id)}}" method="post">

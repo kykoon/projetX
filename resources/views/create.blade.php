@@ -39,8 +39,19 @@
                 <label class="label">Date de Naissance</label>
                 <div class="control">
                     <input class="input" type="date" name="DateNaissance" value="{{ old('DateNaissance') }}" min="1950-01-01" max="{{ date('Y-m-d') }}">
-            </div>
-            <button type="submit" class="btn btn-primary">Ajouter</button>
+                </div>
+
+                <div class="form-group">
+                    <label class="label">Catégorie</label>
+                    <div class="select">
+                        <select name="categorie_id">
+                            @foreach($categories as $categorie)
+                            <option value="{{ $categorie->id }}">{{ $categorie->Libelle }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                </div>
+                    <button type="submit" class="btn btn-primary">Ajouter</button>
         </form>
     </div>
 </div>

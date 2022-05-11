@@ -29,7 +29,8 @@ class ClientController extends Controller
      */
     public function create()
     {
-        return view('create');
+        $categories = Categorie::all();
+        return view('create', compact('categories'));
     }
 
     /**

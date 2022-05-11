@@ -43,8 +43,19 @@
                 <div class="control">
                     <input class="input" type="date" name="DateNaissance" value="{{ $client->DateNaissance }}" min="1950-01-01" max="{{ date('Y-m-d') }}">
                 </div>
+            </div>
 
-                <button type="submit" class="btn btn-primary">Modifier</button>
+            <div class="form-group">
+                <label class="label">Catégorie</label>
+                <div class="select">
+                    <select name="categorie_id">
+                        @foreach($categories as $categorie)
+                        <option value="{{ $categorie->id }}">{{ $categorie->Libelle }}</option>
+                        @endforeach
+                    </select>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Modifier</button>
         </form>
     </div>
 </div>

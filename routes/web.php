@@ -19,3 +19,4 @@ Route::get('/', function () {
 });
 
 Route::resource('clients', ClientController::class);
+Route::get('categorie'/'clients', ClientController::class);
