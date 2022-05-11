@@ -16,7 +16,8 @@ class Categorie extends Model
 
     public function clients()
     {
-        return $this->hasMany(App\Model\Client::class, 'foreign_key', 'local_key');
+        return $this->hasMany(Client::class);
     }
 
+    
 }

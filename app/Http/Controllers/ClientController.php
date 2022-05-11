@@ -16,10 +16,10 @@ class ClientController extends Controller
      */
     public function index()
     {
-        $categorie = Categorie::find(1);
-        $Clients = $categorie->clients;
+        $categories = Categorie::all();
+        $clients = Client::all();
 
-        return view('index', compact('clients'));
+        return view('index', compact('clients','categories'));
     }
 
     /**
